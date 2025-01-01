@@ -14,7 +14,7 @@ struct LoginHeader: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.black
+                Color.theme
                     .ignoresSafeArea()
                 VStack {
                     HStack {
@@ -24,7 +24,9 @@ struct LoginHeader: View {
                         Spacer()
                     }
                     Text(text)
-                        .foregroundColor(.white)
+                        .foregroundColor(.accentColor)
+                        .fontWeight(.bold)
+                        .font(.headline)
                     
                 }
             }

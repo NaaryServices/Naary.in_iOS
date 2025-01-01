@@ -25,10 +25,6 @@ struct GoogleSignInView: View {
             Text("Sign in with Google")
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color.red)
-                .cornerRadius(10)
         }
         .padding()
         .fullScreenCover(isPresented: $showHomeView) {

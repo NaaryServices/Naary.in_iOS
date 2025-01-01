@@ -33,83 +33,87 @@ struct OTPView: View {
     
     var body: some View {
         NavigationStack {
-            GeometryReader { geometry in
-                LoginHeader(text: "Enter the OTP")
-                Spacer()
-                VStack {
-                    // OTP Input Boxes
-                    HStack(spacing: 10) {
-                        ForEach(0..<6, id: \.self) { index in
-                            TextField("", text: $otp[index])
-                                .keyboardType(.numberPad)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: 50, height: 50)
-                                .multilineTextAlignment(.center)
-                                .font(.title)
-                                .cornerRadius(10)
-                                .focused($focusedField, equals: index) // Bind each field to its focus state
-                                .onChange(of: otp[index]) { newValue in
-                                    // Allow only one digit in each OTP box and move to next field
-                                    if newValue.count > 1 {
-                                        otp[index] = String(newValue.prefix(1)) // Limit to one digit
+            ZStack {
+                Color.theme
+                    .ignoresSafeArea()
+                GeometryReader { geometry in
+                    LoginHeader(text: "Enter the OTP")
+                    Spacer()
+                    VStack {
+                        // OTP Input Boxes
+                        HStack(spacing: 10) {
+                            ForEach(0..<6, id: \.self) { index in
+                                TextField("", text: $otp[index])
+                                    .keyboardType(.numberPad)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: 50, height: 50)
+                                    .multilineTextAlignment(.center)
+                                    .font(.title)
+                                    .cornerRadius(10)
+                                    .focused($focusedField, equals: index) // Bind each field to its focus state
+                                    .onChange(of: otp[index]) { newValue in
+                                        // Allow only one digit in each OTP box and move to next field
+                                        if newValue.count > 1 {
+                                            otp[index] = String(newValue.prefix(1)) // Limit to one digit
+                                        }
+                                        if newValue.count == 1, index < 5 {
+                                            focusedField = index + 1 // Move to next field if a digit is entered
+                                        } else if newValue.isEmpty, index > 0 {
+                                            focusedField = index - 1 // Move to previous field when backspace is pressed
+                                        }
                                     }
-                                    if newValue.count == 1, index < 5 {
-                                        focusedField = index + 1 // Move to next field if a digit is entered
-                                    } else if newValue.isEmpty, index > 0 {
-                                        focusedField = index - 1 // Move to previous field when backspace is pressed
+                                    .onTapGesture {
+                                        focusedField = index // Focus on the tapped field
                                     }
-                                }
-                                .onTapGesture {
-                                    focusedField = index // Focus on the tapped field
-                                }
+                            }
                         }
+                        // Verify OTP Button
+                        Button(action: {
+                            verifyOTP()
+                        }) {
+                            Text("Verify OTP")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
+                        }
+                        .padding()
+                        .disabled(isLoading)
+                        
+                        if showError {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .padding()
+                        }
+                        NavigationLink(destination: HomeView(resolver: resolver), isActive: $navigateToHomePage) {
+                            EmptyView() // NavigationLink is triggered programmatically
+                        }
+                        NavigationLink(destination: LoginPhoneNumberView(resolver: resolver), isActive: $navigateToPhoneNumberLogin) {
+                            EmptyView() // NavigationLink is triggered programmatically
+                        }
+                        NavigationLink(destination: PhoneNumberUserFormView(resolver: resolver, phoneNumber: phoneNumber), isActive: $navigateToGetPhoneUserDetailsFormPage) {
+                            EmptyView() // NavigationLink is triggered programmatically
+                        }
+                        .navigationBarBackButtonHidden(true) // Hide default back button
                     }
-                    // Verify OTP Button
-                    Button(action: {
-                        verifyOTP()
-                    }) {
-                        Text("Verify OTP")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                    .blur(radius: isLoading ? 3 : 0)
+                    .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
+                    .background(Color.gray.opacity(0.2))
+                    if isLoading {
+                        ZStack {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .cornerRadius(10)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     }
-                    .padding()
-                    .disabled(isLoading)
-                    
-                    if showError {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .padding()
-                    }
-                    NavigationLink(destination: HomeView(resolver: resolver), isActive: $navigateToHomePage) {
-                        EmptyView() // NavigationLink is triggered programmatically
-                    }
-                    NavigationLink(destination: LoginPhoneNumberView(resolver: resolver), isActive: $navigateToPhoneNumberLogin) {
-                        EmptyView() // NavigationLink is triggered programmatically
-                    }
-                    NavigationLink(destination: PhoneNumberUserFormView(resolver: resolver, phoneNumber: phoneNumber), isActive: $navigateToGetPhoneUserDetailsFormPage) {
-                        EmptyView() // NavigationLink is triggered programmatically
-                    }
-                    .navigationBarBackButtonHidden(true) // Hide default back button
-                }
-                .blur(radius: isLoading ? 3 : 0)
-                .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height)
-                .background(Color.gray.opacity(0.2))
-                if isLoading {
-                    ZStack {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                            .foregroundColor(.black)
-                            .fontWeight(.bold)
-                            .cornerRadius(10)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 }
             }
-        }
+            }
     }
     
     // Verify OTP Action

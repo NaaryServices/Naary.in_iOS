@@ -32,64 +32,70 @@ struct LoginPhoneNumberView: View {
     
     var body: some View {
         NavigationStack {
-            GeometryReader { geometry in
-                VStack {
-                    Spacer()
-                    
-                    // Phone Number Input
-                    TextField("Enter your phone number", text: $phoneNumber)
-                        .keyboardType(.phonePad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .multilineTextAlignment(.center)
-                        .focused($isFocused)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(phoneNumber.isEmpty || phoneNumber.count >= 10 ? Color.clear : Color.red, lineWidth: 1)
-                        )
-                        .padding(.horizontal)
-                        .modifier(ClearButtonModifier(text: $phoneNumber))
-                    
-                    // Login Button
-                    Button(action: {
-                        handleLogin()
-                    }) {
-                        Text("Login")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+            ZStack {
+                Color.theme
+                    .ignoresSafeArea()
+                GeometryReader { geometry in
+                    LoginHeader(text: "Login", backHidden: false)
+                    VStack {
+                        Spacer()
+                        
+                        // Phone Number Input
+                        TextField("Enter your phone number", text: $phoneNumber)
+                            .keyboardType(.phonePad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                            .multilineTextAlignment(.center)
+                            .focused($isFocused)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(phoneNumber.isEmpty || phoneNumber.count >= 10 ? Color.clear : Color.red, lineWidth: 1)
+                            )
+                            .padding(.horizontal)
+                            .modifier(ClearButtonModifier(text: $phoneNumber))
+                        
+                        // Login Button
+                        Spacer()
+                        Button(action: {
+                            handleLogin()
+                        }) {
+                            Text("Login")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
+                        }
+                        .padding()
+                        .disabled(isLoading)
+                        
+                        Spacer()
                     }
                     .padding()
-                    .disabled(isLoading)
-                    
-                    Spacer()
-                }
-                .padding()
-                .blur(radius: isLoading ? 3 : 0)
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                }
-                .onTapGesture {
-                    isFocused = false // Dismiss keyboard on tap outside
-                }
-                .navigationTitle("Login with Phone Number") // Set navigation title
-                .navigationBarBackButtonHidden(true)
-                if isLoading {
-                    ZStack {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                            .foregroundColor(.black)
-                            .fontWeight(.bold)
-                            .cornerRadius(10)
+                    .blur(radius: isLoading ? 3 : 0)
+                    .alert(isPresented: $showAlert) {
+                        Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                }
-                // Navigate to OTP View when the button is pressed
-                NavigationLink(destination: OTPView(resolver: resolver, phoneNumber: phoneNumber), isActive: $navigateToOTP) {
-                    EmptyView() // NavigationLink is triggered programmatically
+                    .onTapGesture {
+                        isFocused = false // Dismiss keyboard on tap outside
+                    }
+                    //.navigationTitle("Login with Phone Number") // Set navigation title
+                    .navigationBarBackButtonHidden(true)
+                    if isLoading {
+                        ZStack {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .cornerRadius(10)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    }
+                    // Navigate to OTP View when the button is pressed
+                    NavigationLink(destination: OTPView(resolver: resolver, phoneNumber: phoneNumber), isActive: $navigateToOTP) {
+                        EmptyView() // NavigationLink is triggered programmatically
+                    }
                 }
             }
         }

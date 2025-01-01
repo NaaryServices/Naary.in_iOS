@@ -21,55 +21,59 @@ struct PhoneNumberUserFormView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                LoginHeader(text: "Enter your name")
-                Spacer()
-                VStack(spacing: 50) {
-                    TextField("First Name", text: $firstName)
-                        .textInputAutocapitalization(.words)
-                        .autocorrectionDisabled()
-                        .onChange(of: firstName) { _ in
-                            errorMessage = ""
-                        }
-                    
-                    TextField("Last Name", text: $lastName)
-                        .textInputAutocapitalization(.words)
-                        .autocorrectionDisabled()
-                        .onChange(of: lastName) { _ in
-                            errorMessage = ""
-                        }
-                    TextField("Email(Optional)", text: $email)
-                        .textInputAutocapitalization(.words)
-                        .autocorrectionDisabled()
-                        .onChange(of: firstName) { _ in
-                            errorMessage = ""
-                        }
-                    
-                    if !errorMessage.isEmpty {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .padding(.top)
-                    }
-                    
+            ZStack {
+                Color.theme
+                    .ignoresSafeArea()
+                VStack {
+                    LoginHeader(text: "Enter your name")
                     Spacer()
-                    Button(action: nextButtonClicked) {
-                        Text("Next")
-                            .fontWeight(.bold)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .padding(.horizontal)
+                    VStack(spacing: 50) {
+                        TextField("First Name", text: $firstName)
+                            .textInputAutocapitalization(.words)
+                            .autocorrectionDisabled()
+                            .onChange(of: firstName) { _ in
+                                errorMessage = ""
+                            }
+                        
+                        TextField("Last Name", text: $lastName)
+                            .textInputAutocapitalization(.words)
+                            .autocorrectionDisabled()
+                            .onChange(of: lastName) { _ in
+                                errorMessage = ""
+                            }
+                        TextField("Email(Optional)", text: $email)
+                            .textInputAutocapitalization(.words)
+                            .autocorrectionDisabled()
+                            .onChange(of: firstName) { _ in
+                                errorMessage = ""
+                            }
+                        
+                        if !errorMessage.isEmpty {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .padding(.top)
+                        }
+                        
+                        Spacer()
+                        Button(action: nextButtonClicked) {
+                            Text("Next")
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                        }
+                        .disabled(firstName.isEmpty || lastName.isEmpty)
+                        .opacity(firstName.isEmpty || lastName.isEmpty ? 0.5 : 1.0)
+                        NavigationLink(destination: HomeView(resolver: resolver), isActive: $navigateToHomeView) {
+                            EmptyView() // NavigationLink is triggered programmatically
+                        }
                     }
-                    .disabled(firstName.isEmpty || lastName.isEmpty)
-                    .opacity(firstName.isEmpty || lastName.isEmpty ? 0.5 : 1.0)
-                    NavigationLink(destination: HomeView(resolver: resolver), isActive: $navigateToHomeView) {
-                        EmptyView() // NavigationLink is triggered programmatically
-                    }
+                    .navigationTitle("Details")
+                    .padding()
                 }
-                .navigationTitle("Details")
-                .padding()
             }
         }
     }
