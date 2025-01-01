@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import Swinject
 
 @main
+
 struct NaaryApp: App {
+    let container = Container()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    init() {
+        // Apply the AppAssembly to configure the container
+        let appAssembly = AppAssembly()
+        appAssembly.assemble(container: container)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(resolver: container)
         }
     }
 }

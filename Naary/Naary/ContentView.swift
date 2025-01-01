@@ -6,19 +6,20 @@
 //
 
 import SwiftUI
+import Swinject
 
 struct ContentView: View {
+    let resolver: Resolver
+    
+    init(resolver: Resolver) {
+        self.resolver = resolver
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        LoginSelectionView(resolver: resolver)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(resolver: Container())
 }
