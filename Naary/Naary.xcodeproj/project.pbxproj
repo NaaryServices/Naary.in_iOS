@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341403B72D25CE2D00C2D0B1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 341403B62D25CE2D00C2D0B1 /* FirebaseAuth */; };
+		341403B92D25CE2D00C2D0B1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 341403B82D25CE2D00C2D0B1 /* FirebaseCore */; };
+		341403BB2D25CE2D00C2D0B1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 341403BA2D25CE2D00C2D0B1 /* FirebaseFirestore */; };
+		341403BD2D25CE2D00C2D0B1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 341403BC2D25CE2D00C2D0B1 /* FirebaseMessaging */; };
+		341403C02D25CE3A00C2D0B1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 341403BF2D25CE3A00C2D0B1 /* GoogleSignIn */; };
+		341403C32D25CE4300C2D0B1 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 341403C22D25CE4300C2D0B1 /* Swinject */; };
+		341403C62D25CE4C00C2D0B1 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = 341403C52D25CE4C00C2D0B1 /* SwinjectStoryboard */; };
 		34594E182D25417400684DF2 /* NaaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E172D25417400684DF2 /* NaaryApp.swift */; };
 		34594E1A2D25417400684DF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E192D25417400684DF2 /* ContentView.swift */; };
 		34594E1C2D25417500684DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34594E1B2D25417500684DF2 /* Assets.xcassets */; };
@@ -26,12 +33,6 @@
 		34594E472D25459400684DF2 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E462D25459400684DF2 /* GoogleUser.swift */; };
 		34594E492D2545A300684DF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E482D2545A300684DF2 /* User.swift */; };
 		34594E4B2D2545B500684DF2 /* PhoneNumberUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E4A2D2545B500684DF2 /* PhoneNumberUser.swift */; };
-		34594E4F2D25465200684DF2 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E4E2D25465200684DF2 /* SwinjectStoryboard */; };
-		34594E522D25466000684DF2 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E512D25466000684DF2 /* Swinject */; };
-		34594E552D25467300684DF2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E542D25467300684DF2 /* GoogleSignIn */; };
-		34594E582D2546B700684DF2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E572D2546B700684DF2 /* FirebaseAuth */; };
-		34594E5A2D2546B700684DF2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E592D2546B700684DF2 /* FirebaseCore */; };
-		34594E5C2D2546B700684DF2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E5B2D2546B700684DF2 /* FirebaseMessaging */; };
 		34594E5F2D2546F000684DF2 /* LoginPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E5E2D2546F000684DF2 /* LoginPhoneNumberView.swift */; };
 		34594E612D25470800684DF2 /* LoginSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E602D25470800684DF2 /* LoginSelectionView.swift */; };
 		34594E632D25471900684DF2 /* LoginHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E622D25471900684DF2 /* LoginHeader.swift */; };
@@ -40,13 +41,14 @@
 		34594E6A2D25476600684DF2 /* LoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E692D25476600684DF2 /* LoginProtocol.swift */; };
 		34594E6C2D25477800684DF2 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E6B2D25477800684DF2 /* LoginManager.swift */; };
 		34594E6E2D25478C00684DF2 /* GoogleSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E6D2D25478C00684DF2 /* GoogleSignInView.swift */; };
-		34594E702D2547D200684DF2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34594E6F2D2547D200684DF2 /* FirebaseFirestore */; };
 		34594E732D254AA400684DF2 /* client_53394674274-me9ufkcb0f0s3678ue9iq2tn5io5i3dv.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34594E722D254AA400684DF2 /* client_53394674274-me9ufkcb0f0s3678ue9iq2tn5io5i3dv.apps.googleusercontent.com.plist */; };
 		34594E752D254AEA00684DF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34594E742D254AEA00684DF2 /* AppDelegate.swift */; };
 		34594E772D254B6700684DF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34594E762D254B6700684DF2 /* GoogleService-Info.plist */; };
+		E2E9F3B5EF3BBBCF32D218A9 /* Pods_Naary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21CEACE40D8E81C27B57AE8 /* Pods_Naary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29360EF94B5886D484994EA7 /* Pods-Naary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naary.debug.xcconfig"; path = "Target Support Files/Pods-Naary/Pods-Naary.debug.xcconfig"; sourceTree = "<group>"; };
 		34594E142D25417400684DF2 /* Naary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34594E172D25417400684DF2 /* NaaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaaryApp.swift; sourceTree = "<group>"; };
 		34594E192D25417400684DF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		34594E722D254AA400684DF2 /* client_53394674274-me9ufkcb0f0s3678ue9iq2tn5io5i3dv.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_53394674274-me9ufkcb0f0s3678ue9iq2tn5io5i3dv.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		34594E742D254AEA00684DF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34594E762D254B6700684DF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B21CEACE40D8E81C27B57AE8 /* Pods_Naary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE60457E3CCFC3D9DF61A187 /* Pods-Naary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naary.release.xcconfig"; path = "Target Support Files/Pods-Naary/Pods-Naary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +90,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34594E5C2D2546B700684DF2 /* FirebaseMessaging in Frameworks */,
-				34594E4F2D25465200684DF2 /* SwinjectStoryboard in Frameworks */,
-				34594E5A2D2546B700684DF2 /* FirebaseCore in Frameworks */,
-				34594E522D25466000684DF2 /* Swinject in Frameworks */,
-				34594E552D25467300684DF2 /* GoogleSignIn in Frameworks */,
-				34594E582D2546B700684DF2 /* FirebaseAuth in Frameworks */,
-				34594E702D2547D200684DF2 /* FirebaseFirestore in Frameworks */,
+				E2E9F3B5EF3BBBCF32D218A9 /* Pods_Naary.framework in Frameworks */,
+				341403BB2D25CE2D00C2D0B1 /* FirebaseFirestore in Frameworks */,
+				341403C62D25CE4C00C2D0B1 /* SwinjectStoryboard in Frameworks */,
+				341403C32D25CE4300C2D0B1 /* Swinject in Frameworks */,
+				341403BD2D25CE2D00C2D0B1 /* FirebaseMessaging in Frameworks */,
+				341403B92D25CE2D00C2D0B1 /* FirebaseCore in Frameworks */,
+				341403B72D25CE2D00C2D0B1 /* FirebaseAuth in Frameworks */,
+				341403C02D25CE3A00C2D0B1 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +109,8 @@
 			children = (
 				34594E162D25417400684DF2 /* Naary */,
 				34594E152D25417400684DF2 /* Products */,
+				AC6A71C08D94EB99AF5B13AC /* Pods */,
+				4DB2ABC17A0C842EC18A1303 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,6 +264,23 @@
 			path = "GoogleInfo-plist";
 			sourceTree = "<group>";
 		};
+		4DB2ABC17A0C842EC18A1303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B21CEACE40D8E81C27B57AE8 /* Pods_Naary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC6A71C08D94EB99AF5B13AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29360EF94B5886D484994EA7 /* Pods-Naary.debug.xcconfig */,
+				CE60457E3CCFC3D9DF61A187 /* Pods-Naary.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34594E222D25417500684DF2 /* Build configuration list for PBXNativeTarget "Naary" */;
 			buildPhases = (
+				C2FE3FEDCC9330C02515DC21 /* [CP] Check Pods Manifest.lock */,
 				34594E102D25417400684DF2 /* Sources */,
 				34594E112D25417400684DF2 /* Frameworks */,
 				34594E122D25417400684DF2 /* Resources */,
+				55AD15B9AE275B5E93FFA3F9 /* [CP] Copy Pods Resources */,
+				341403C82D25D1EF00C2D0B1 /* Firebase */,
 			);
 			buildRules = (
 			);
@@ -274,13 +301,13 @@
 			);
 			name = Naary;
 			packageProductDependencies = (
-				34594E4E2D25465200684DF2 /* SwinjectStoryboard */,
-				34594E512D25466000684DF2 /* Swinject */,
-				34594E542D25467300684DF2 /* GoogleSignIn */,
-				34594E572D2546B700684DF2 /* FirebaseAuth */,
-				34594E592D2546B700684DF2 /* FirebaseCore */,
-				34594E5B2D2546B700684DF2 /* FirebaseMessaging */,
-				34594E6F2D2547D200684DF2 /* FirebaseFirestore */,
+				341403B62D25CE2D00C2D0B1 /* FirebaseAuth */,
+				341403B82D25CE2D00C2D0B1 /* FirebaseCore */,
+				341403BA2D25CE2D00C2D0B1 /* FirebaseFirestore */,
+				341403BC2D25CE2D00C2D0B1 /* FirebaseMessaging */,
+				341403BF2D25CE3A00C2D0B1 /* GoogleSignIn */,
+				341403C22D25CE4300C2D0B1 /* Swinject */,
+				341403C52D25CE4C00C2D0B1 /* SwinjectStoryboard */,
 			);
 			productName = Naary;
 			productReference = 34594E142D25417400684DF2 /* Naary.app */;
@@ -311,10 +338,10 @@
 			);
 			mainGroup = 34594E0B2D25417400684DF2;
 			packageReferences = (
-				34594E4D2D25465200684DF2 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
-				34594E502D25466000684DF2 /* XCRemoteSwiftPackageReference "Swinject" */,
-				34594E532D25467300684DF2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				341403BE2D25CE3A00C2D0B1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				341403C12D25CE4300C2D0B1 /* XCRemoteSwiftPackageReference "Swinject" */,
+				341403C42D25CE4C00C2D0B1 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
 			);
 			productRefGroup = 34594E152D25417400684DF2 /* Products */;
 			projectDirPath = "";
@@ -338,6 +365,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		341403C82D25D1EF00C2D0B1 /* Firebase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Firebase;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		55AD15B9AE275B5E93FFA3F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Naary/Pods-Naary-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Naary/Pods-Naary-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Naary/Pods-Naary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2FE3FEDCC9330C02515DC21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Naary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34594E102D25417400684DF2 /* Sources */ = {
@@ -380,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -413,7 +501,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -430,9 +519,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -443,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -476,7 +568,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -487,8 +580,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -497,6 +593,7 @@
 		};
 		34594E232D25417500684DF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29360EF94B5886D484994EA7 /* Pods-Naary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -517,6 +614,24 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"GooglePlaces\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobility.Naary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -527,6 +642,7 @@
 		};
 		34594E242D25417500684DF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE60457E3CCFC3D9DF61A187 /* Pods-Naary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -579,31 +695,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		34594E4D2D25465200684DF2 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.3;
-			};
-		};
-		34594E502D25466000684DF2 /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.1;
-			};
-		};
-		34594E532D25467300684DF2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
-		34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -611,43 +703,67 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		341403BE2D25CE3A00C2D0B1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		341403C12D25CE4300C2D0B1 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		341403C42D25CE4C00C2D0B1 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		34594E4E2D25465200684DF2 /* SwinjectStoryboard */ = {
+		341403B62D25CE2D00C2D0B1 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34594E4D2D25465200684DF2 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
-			productName = SwinjectStoryboard;
-		};
-		34594E512D25466000684DF2 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 34594E502D25466000684DF2 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
-		34594E542D25467300684DF2 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 34594E532D25467300684DF2 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
-		};
-		34594E572D2546B700684DF2 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		34594E592D2546B700684DF2 /* FirebaseCore */ = {
+		341403B82D25CE2D00C2D0B1 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
 		};
-		34594E5B2D2546B700684DF2 /* FirebaseMessaging */ = {
+		341403BA2D25CE2D00C2D0B1 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		341403BC2D25CE2D00C2D0B1 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341403B52D25CE2D00C2D0B1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		34594E6F2D2547D200684DF2 /* FirebaseFirestore */ = {
+		341403BF2D25CE3A00C2D0B1 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34594E562D2546B700684DF2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
+			package = 341403BE2D25CE3A00C2D0B1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		341403C22D25CE4300C2D0B1 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341403C12D25CE4300C2D0B1 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		341403C52D25CE4C00C2D0B1 /* SwinjectStoryboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 341403C42D25CE4C00C2D0B1 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
+			productName = SwinjectStoryboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
